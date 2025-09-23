@@ -4,7 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep3 World!");
+        //CSE 210
+        //Anna Burke
+        //Guess the number
+
+        Console.WriteLine("Guess my number!");
 
         while (true)
         {
@@ -18,8 +22,7 @@ class Program
             {
                 i++;
                 Console.Write("What is your guess? ");
-                string guesss = Console.ReadLine();
-                guess = Convert.ToInt32(guesss);
+                guess = int.Parse(Console.ReadLine());
 
                 if (guess > number)
                 {
@@ -35,6 +38,7 @@ class Program
             Console.WriteLine($"The number was {number}");
 
             Console.Write("Play again? (y/n): ");
+            // yorn stands for Yes OR No
             string yorn = Console.ReadLine();
             string lowyorn = yorn.ToLower();
             if (lowyorn == "n")
