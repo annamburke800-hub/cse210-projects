@@ -1,10 +1,13 @@
 using System;
-
+using System.Collections.Generic;
 class Program
 {
     static void Main(string[] args)
     {
-        // using System.Collections.Generic;
+        // CSE 210
+        // Anna Burke
+        // List practice
+        
         Console.WriteLine("Hello Prep4 World!");
         List<int> numbers = new List<int>();
         int numbinput = 1;
