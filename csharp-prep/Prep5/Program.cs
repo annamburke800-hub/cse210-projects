@@ -9,7 +9,10 @@ class Program
         // Anna Burke
         // Function Practice
 
-        // Look I was procrastinating HARD on this assignment until I decided to make it a little story! The Gambling Guy is a character I made up for other programming projects and he just does whatever. I hope it's ok that I added him in! It still does the same thing just with more words.
+        // Look I was procrastinating HARD on this assignment until I decided to make it a little
+        // story! The Gambling Guy is a character I made up for other programming projects and 
+        // he just does whatever. I hope it's ok that I added him in! It still does the same 
+        // thing just with more words.
 
         Console.WriteLine("Hello Prep5 World!");
 
