@@ -1,22 +1,17 @@
-using System;
-
-public class Entry
+using System; 
+public class Entry 
 {
-    static Prompts prompt1 = new Prompts();
-    // static string _prompts = prompt1.RandomizePrompt();
     static DateTime theCurrentTime = DateTime.Now;
     static DateTime datePartOnly = theCurrentTime.Date;
 
 
-    public string _date { get; set; } = datePartOnly.ToString("MM/dd/yyyy");
-    public string _prompt { get; set; } = prompt1.RandomizePrompt();
-    public string _response { get; set; } = "";
-
-
-
+    public static Prompts _prompts = new Prompts();
+    public string _prompt = _prompts.RandomizePrompt();
+    public string _response;
+    public string _date = datePartOnly.ToString("MM/dd/yyyy");
 
     public override string ToString()
-        => $"[{_date}] {_prompt}\n{_response} \n"; //this formats what we see when the prompt appears...
+    => $"Date: {_date} Prompt: {_prompt}\n Response: {_response}";
 
     public string ToLine() => $"{_date}|{_prompt}|{_response}";
 
@@ -31,4 +26,10 @@ public class Entry
             _response = parts[2]
         };
     }
-}
+
+
+
+
+     
+
+} 
