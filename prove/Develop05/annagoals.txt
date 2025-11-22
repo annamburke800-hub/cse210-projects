@@ -1,0 +1,5 @@
+1150
+SimpleGoal:goal 1,goal 1,100,X,True
+EternalGoal:goal 2,goal 2,100
+ChecklistGoal:goal 3,goal 3,50,5,3,200, 
+SimpleGoal:goal 4,goal 4,500,X,True
