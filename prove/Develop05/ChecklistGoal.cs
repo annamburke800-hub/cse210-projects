@@ -9,11 +9,11 @@ public class ChecklistGoal : Goal
     private string _check = " ";
 
 
-    public ChecklistGoal(string title, string description, int points, int goalamount, int timesdone, int bonuspoints) : base(title, description, points)
+    public ChecklistGoal(string title, string description, int points, int goalAmount, int timesDone, int bonusPoints) : base(title, description, points)
     {
-        _goalAmount = goalamount;
-        _timesDone = timesdone;
-        _bonusPoints = bonuspoints;
+        _goalAmount = goalAmount;
+        _timesDone = timesDone;
+        _bonusPoints = bonusPoints;
     }
 
     public override void CheckOff()

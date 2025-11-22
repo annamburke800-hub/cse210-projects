@@ -7,9 +7,9 @@ public class SimpleGoal : Goal
     private bool _isChecked;
     
 
-    public SimpleGoal(string title, string description, int points, bool ischecked) : base(title, description, points)
+    public SimpleGoal(string title, string description, int points, bool isChecked) : base(title, description, points)
     {
-        _isChecked = ischecked;
+        _isChecked = isChecked;
         if (_isChecked == true)
         {
             _check = "X";
