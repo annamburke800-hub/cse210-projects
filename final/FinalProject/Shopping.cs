@@ -1,0 +1,21 @@
+using System;
+
+public class Shopping : Chore
+{
+    private double _cost;
+
+    public Shopping(string title, string description, int howOften, DateTime lastDone, double worth, Person whoDid, double cost) : base(title, description, howOften, lastDone, worth, whoDid)
+    {
+        _cost = cost;
+    }
+
+    public override void DisplayDetails()
+    {
+        Console.WriteLine($"--{_title}--\n{_description}");
+        LastDone();
+        NextDo();
+        Console.WriteLine($"Last done by {_whoDid.GetName()}\nMost Recent Cost: {_cost}");
+    }
+
+    
+}
