@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello FinalProject World!");
+        Console.WriteLine("Test");
 
         Person Lucy = new Child("Lucy",0);
         Person David = new Parent("David",100);
