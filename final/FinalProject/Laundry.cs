@@ -6,8 +6,18 @@ public class Laundry : Chore
 
     //you need to do both parts to complete the chore
 
-    public override void DoChore()
+    public override void DoChore(Person person)
     {
-        base.DoChore();
+        Console.WriteLine("Have you put the clothes in both the laundry machine AND the dryer?\n1. Yes\n2. No");
+        int menuq = int.Parse(Console.ReadLine());
+        if (menuq == 1)
+        {
+            base.DoChore(person);
+        }
+        else
+        {
+            Console.WriteLine("Make sure to do both parts before logging!");
+            Console.ReadLine();
+        }
     }
 }

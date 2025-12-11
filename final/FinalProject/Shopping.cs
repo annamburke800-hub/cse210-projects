@@ -14,7 +14,17 @@ public class Shopping : Chore
         Console.WriteLine($"--{_title}--\n{_description}");
         LastDone();
         NextDo();
-        Console.WriteLine($"Last done by {_whoDid.GetName()}\nMost Recent Cost: {_cost}");
+        Console.WriteLine($"Last done by {_whoDid.GetName()}\nMost Recent Cost: ${_cost.ToString("0.00")}");
+    }
+
+    public override void DoChore(Person person)
+    {
+        Console.Write("What was the cost of this trip?\n$");
+        double cost = double.Parse(Console.ReadLine());
+        _cost = cost;
+
+        base.DoChore(person);
+
     }
 
     

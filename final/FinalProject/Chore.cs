@@ -57,8 +57,19 @@ public  class Chore
     {
         return _title;
     }
-    public virtual void DoChore()
+    public DateTime GetLastDone()
     {
-        Console.WriteLine("do the chore");
+        return _lastDone;
+    }
+    public double GetWorth()
+    {
+        return _worth;
+    }
+    public virtual void DoChore(Person person)
+    {
+       _lastDone = DateTime.Today;
+       _whoDid = person;
+       Console.WriteLine($"{_title} was last done on {_lastDone} by {_whoDid.GetName()}.");
+       Console.ReadLine();
     }
 }
