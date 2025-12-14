@@ -13,7 +13,7 @@ public abstract class Person
         _lastAllowanceGiven = lastAllowanceGiven;
     }
 
-    public abstract void Allowance(List<Chore> chores);
+    public abstract void Allowance(List<Chore> chores, string name);
     //get date!!!! hidden variable of last time allowance was given and only give allowance for AFTER that date!!!!
 
     public string GetName()
@@ -25,4 +25,6 @@ public abstract class Person
     {
         return _money;
     }
+
+    public abstract string GetStringRepresentation();
 }

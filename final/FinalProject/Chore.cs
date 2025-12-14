@@ -7,9 +7,9 @@ public  class Chore
     private int _howOften;
     private DateTime _lastDone;
     private double _worth;
-    protected Person _whoDid;
+    protected string _whoDid;
 
-    public Chore(string title, string description, int howOften, DateTime lastDone, double worth, Person whoDid)
+    public Chore(string title, string description, int howOften, DateTime lastDone, double worth, string whoDid)
     {
         _title = title;
         _description = description;
@@ -24,14 +24,23 @@ public  class Chore
         Console.WriteLine($"--{_title}--\n{_description}");
         LastDone();
         NextDo();
-        Console.WriteLine($"Last done by {_whoDid.GetName()}");
+        DateTime today = DateTime.Today;
+        if ((today-_lastDone).Days < 9999)
+        {
+            Console.WriteLine($"Last done by {_whoDid}");
+        }
+        
     }
 
     public void LastDone()
     {
         DateTime today = DateTime.Today;
         int daysSince = (today-_lastDone).Days;
-        Console.WriteLine($"This was last done {daysSince} day(s) ago.");
+        if (daysSince < -99999)
+        {
+            Console.WriteLine($"This was last done {daysSince} day(s) ago.");
+        }
+        
     }
 
     public void NextDo()
@@ -42,6 +51,10 @@ public  class Chore
         if (daysUntil == 0)
         {
             Console.WriteLine("This needs to be done today.");
+        }
+        else if (daysUntil < -99999)
+        {
+            Console.WriteLine("This chore has not been done yet");
         }
         else if (daysUntil < 0)
         {
@@ -65,11 +78,22 @@ public  class Chore
     {
         return _worth;
     }
-    public virtual void DoChore(Person person)
+    public string GetWhoDid()
+    {
+        return _whoDid;
+    }
+    
+    public virtual void DoChore(Person whoDid)
     {
        _lastDone = DateTime.Today;
-       _whoDid = person;
-       Console.WriteLine($"{_title} was last done on {_lastDone} by {_whoDid.GetName()}.");
+       _whoDid = whoDid.GetName();
+       Console.WriteLine($"{_title} was last done on {_lastDone.ToString("yyyy-MM-dd")} by {_whoDid}.");
        Console.ReadLine();
+    }
+
+    public virtual string GetStringRepresentation()
+    {
+        string details = $"{_title}|{_description}|{_howOften}|{_lastDone}|{_worth}|{_whoDid}";
+        return details;
     }
 }

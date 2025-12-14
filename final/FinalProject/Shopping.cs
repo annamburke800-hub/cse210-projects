@@ -4,7 +4,7 @@ public class Shopping : Chore
 {
     private double _cost;
 
-    public Shopping(string title, string description, int howOften, DateTime lastDone, double worth, Person whoDid, double cost) : base(title, description, howOften, lastDone, worth, whoDid)
+    public Shopping(string title, string description, int howOften, DateTime lastDone, double worth, string whoDid, double cost) : base(title, description, howOften, lastDone, worth, whoDid)
     {
         _cost = cost;
     }
@@ -14,7 +14,12 @@ public class Shopping : Chore
         Console.WriteLine($"--{_title}--\n{_description}");
         LastDone();
         NextDo();
-        Console.WriteLine($"Last done by {_whoDid.GetName()}\nMost Recent Cost: ${_cost.ToString("0.00")}");
+        DateTime today = DateTime.Today;
+        if ((today-GetLastDone()).Days < 9999)
+        {
+            Console.WriteLine($"Last done by {_whoDid}\nMost Recent Cost: ${_cost.ToString("0.00")}");
+        }
+        
     }
 
     public override void DoChore(Person person)
@@ -25,6 +30,12 @@ public class Shopping : Chore
 
         base.DoChore(person);
 
+    }
+
+    public override string GetStringRepresentation()
+    {
+        string details = $"{base.GetStringRepresentation()}|{_cost}";
+        return details;
     }
 
     
