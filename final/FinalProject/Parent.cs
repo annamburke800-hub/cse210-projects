@@ -9,7 +9,7 @@ public class Parent : Person
          double totalAllowance= 0;
         for (int i = 0; i < chores.Count; i++)
         {
-            if (chores[i].GetLastDone() > _lastAllowanceGiven && chores[i].GetWhoDid() == name)// & (DateTime.Today-chores[i].GetLastDone()).Days < 9999 )
+            if (chores[i].GetLastDone() > _lastAllowanceGiven && chores[i].GetWhoDid() == name)
             {
                 totalAllowance += chores[i].GetWorth();
             }

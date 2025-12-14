@@ -8,10 +8,12 @@ class Program
         // Console.WriteLine("Hello FinalProject World!");
         // Console.WriteLine("Test");
 
-        Person Lucy = new Child("Lucy",0, new DateTime(2025,11,01));
-        Person David = new Parent("David",100, new DateTime(2025,11,01));
+        Person Lucy = new Child("Lucy",0, new DateTime());
+        Person Travis = new Child("Travis",0,new DateTime());
+        Person David = new Parent("David",100, new DateTime());
+        Person Harriet = new Parent("Harriet",100, new DateTime());
 
-        List <Person> People = new List<Person>{Lucy, David};
+        List <Person> People = new List<Person>{David,Harriet,Lucy,Travis};
 
         Chore Laundry = new Laundry("Laundry","Put dirty clothes in the washing machine and then the dryer",7, new DateTime(),5.0,"n/a");
         Chore Dishes = new Dishes("Dishes","Wash dishes by hand or using the dishwasher",3, new DateTime(),2.5,"n/a");
