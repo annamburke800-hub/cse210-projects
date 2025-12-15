@@ -36,7 +36,7 @@ public  class Chore
     {
         DateTime today = DateTime.Today;
         int daysSince = (today-_lastDone).Days;
-        if (daysSince < -99999)
+        if (daysSince < 99999)
         {
             Console.WriteLine($"This was last done {daysSince} day(s) ago.");
         }
